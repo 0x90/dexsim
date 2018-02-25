@@ -6,7 +6,7 @@ import re
 
 from timeout3 import TIMEOUT_EXCEPTION, timeout
 
-from ..plugin import Plugin
+from dexsim.plugin import Plugin
 
 logger = logging.getLogger(__name__)
 

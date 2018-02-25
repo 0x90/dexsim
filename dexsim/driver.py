@@ -5,7 +5,7 @@ import tempfile
 
 from adbwrapper import ADB
 
-from . import logs
+from dexsim import settings
 
 logger = logging.getLogger(__name__)
 
@@ -76,6 +76,7 @@ class Driver:
         self.adb.run_cmd(
             ['pull', DSS_OUTPUT_PATH, output_path])
 
+        result = None
         with open(output_path, mode='r+', encoding='utf-8') as ofile:
             size = len(ofile.read())
             if not size:
@@ -85,7 +86,7 @@ class Driver:
                 ofile.seek(0)
                 result = json.load(ofile)
 
-        if not logs.DEBUG:
+        if not settings.DEBUG:
             self.adb.shell_command(['rm', DSS_OUTPUT_PATH])
             self.adb.shell_command(['rm', DSS_TARGETS_PATH])
         else:

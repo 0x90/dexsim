@@ -1,8 +1,8 @@
 from smafile import SmaliDir
 
-from . import FILTERS
-from .driver import DSS_APK_PATH
-from .plugin_manager import PluginManager
+from dexsim import settings
+from dexsim.driver import DSS_APK_PATH
+from dexsim.plugin_manager import PluginManager
 
 
 class Oracle:
@@ -10,7 +10,7 @@ class Oracle:
     def __init__(self, smali_dir, driver, include_str):
 
         self.driver = driver
-        self.smalidir = SmaliDir(smali_dir, FILTERS)
+        self.smalidir = SmaliDir(smali_dir, settings.FILTERS_LIST)
         self.plugin_manager = PluginManager(self.driver, self.smalidir)
 
     def divine(self):

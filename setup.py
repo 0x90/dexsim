@@ -13,7 +13,7 @@ setup(
         'Click',
         # 'Click_utils',
         'powerzip',
-        'adbwrapper',
+        # 'adbwrapper',
         'cigam',
         'pyaml',
         'smafile',

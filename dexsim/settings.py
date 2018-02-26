@@ -34,13 +34,8 @@ with open(FILTERS_PATH) as f:
 
 logging.info('Loaded %i filters' % len(FILTERS_LIST))
 
-# log_path = os.path.join(MAIN_PATH, 'dexsim.log')
-#
-# logging.basicConfig(
-#     level=logging.DEBUG,
-#     filename=log_path,
-#     format='%(asctime)s %(levelname)s %(name)s: %(message)s',
-#     filemode='w')
 
+# DSS_SERVER_PATH = os.path.join(MAIN_PATH, 'server', 'app-release.apk')
+DSS_SERVER_PATH = os.path.join(MAIN_PATH, 'server', 'dss.apk')
 
 DEBUG = False
